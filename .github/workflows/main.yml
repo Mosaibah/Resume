@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download PDF
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
           name: resume
     - name: Deploy PDF
@@ -28,7 +28,7 @@ jobs:
       with:
         switches: -av --progress
         path: ./main.pdf
-        remote_path: /var/www/resume.pdf
+        remote_path: /var/www/resume/resume.pdf
         remote_host: ${{ secrets.DEPLOY_HOSTNAME }}
         remote_user: ${{ secrets.DEPLOY_USERNAME }}
         remote_key: ${{ secrets.DEPLOY_KEY }}
