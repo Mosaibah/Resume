@@ -22,6 +22,10 @@ jobs:
     - name: Deploy PDF
       uses: burnett01/rsync-deployments@5.1
       with:
+          name: resume
+    - name: Deploy PDF
+      uses: burnett01/rsync-deployments@5.1
+      with:
         switches: -av --progress
         path: ./main.pdf
         remote_path: /var/www/resume.pdf
